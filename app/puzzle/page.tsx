@@ -7,9 +7,10 @@ export default function PuzzlePage() {
   const [answer, setAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
   const router = useRouter();
+  const correctAnswers = ['戸山公園', 'とやまこうえん']
 
   const handleSubmit = () => {
-    if (answer.trim() === '正解') {
+    if (correctAnswers.includes(answer.trim())) {
       setIsCorrect(true);
     } else {
       alert('違います。もう一度考えてみよう。');

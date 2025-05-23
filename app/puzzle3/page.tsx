@@ -2,33 +2,47 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function Puzzle2() {
   const [who, setWho] = useState('');
   const [where, setWhere] = useState('');
   const [how, setHow] = useState('');
   const [hintVisible, setHintVisible] = useState(false);
+  const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const router = useRouter();
+  const [isCorrectAnimating, setIsCorrectAnimating] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   const handleSubmit = () => {
-    const correctWho = '田中';
-    const correctWhere = '倉庫';
-    const correctHow = '毒';
+    const correctWho = '平田浩介';
+    const correctWhere = 'ロープ';
+    const correctHow = '口封じ';
 
     if (
       who.trim() === correctWho &&
       where.trim() === correctWhere &&
       how.trim() === correctHow
     ) {
-      router.push('/puzzle3');
+      setIsCorrectAnimating(true);
+      setTimeout(() => {
+        setIsFadingOut(true);
+      }, 2000);
+      setTimeout(() => {
+        router.push('/ending');
+      }, 3000);
     } else {
-      alert('どれかが違います。もう一度考えてみましょう。');
+      setPopupMessage('本当にその推理は正しいのだろうか。もう一度考えてみよう。');
     }
   };
 
+  const handlePopupClose = () => {
+      setPopupMessage(null);
+  };
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 className="text-2xl font-bold mb-6 text-center">第2問：事件の真相を明らかにせよ</h2>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 relative">
+      <h2 className="text-2xl font-bold mb-6 text-center">第3問：事件の真相を明らかにせよ</h2>
 
       {/* 解答欄 */}
       <div className="w-full max-w-md space-y-4 mb-6">
@@ -43,12 +57,12 @@ export default function Puzzle2() {
           />
         </div>
         <div>
-          <label className="block mb-1 font-semibold">どこで</label>
+          <label className="block mb-1 font-semibold">なにで</label>
           <input
             type="text"
             value={where}
             onChange={(e) => setWhere(e.target.value)}
-            placeholder="例：倉庫"
+            placeholder="例：包丁"
             className="w-full p-2 border border-gray-300 rounded"
           />
         </div>
@@ -86,6 +100,35 @@ export default function Puzzle2() {
           </p>
         )}
       </div>
+
+      {/* ポップアップ表示 */}
+      {popupMessage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded shadow-lg max-w-sm text-center space-y-4">
+            <p className="text-lg">{popupMessage}</p>
+            <button
+              onClick={handlePopupClose}
+              className="bg-amber-400 hover:bg-amber-500 text-black font-bold py-2 px-4 rounded"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isCorrectAnimating && (
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1.1, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50"
+        >
+          <div className="text-white text-4xl font-bold animate-pulse">
+            真相解明
+          </div>
+        </motion.div>
+      )}
     </main>
   );
 }

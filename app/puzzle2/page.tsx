@@ -45,10 +45,10 @@ export default function PuzzlePage() {
       {isCorrect && (
         <section className="max-w-md text-center space-y-6 text-lg leading-relaxed">
           <p>
-            あなたは謎のメモに書かれていた手がかりをもとに、戸山公園へ向かった。
+            あなたたちはキャンパス内を探索し暗証番号を突き止めた。
           </p>
           <p>
-            そこで発見したのは、一冊の黒いファイル。中には、
+            USBのデータを見てみると、中には、
             <strong>犯人の候補とその動機が詳細にまとめられたデータ</strong>が収められていた。
           </p>
           <p>
