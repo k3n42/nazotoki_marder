@@ -17,12 +17,12 @@ export default function PuzzlePage() {
   };
 
   const handleNext = () => {
-    router.push('/puzzle2');
+    router.push('/puzzle3');
   };
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 className="text-2xl font-bold mb-6 text-center">謎解き 第1問</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">第2問</h2>
 
       {!isCorrect && (
         <div className="w-full max-w-sm mb-6">
@@ -48,11 +48,11 @@ export default function PuzzlePage() {
             あなたは謎のメモに書かれていた手がかりをもとに、戸山公園へ向かった。
           </p>
           <p>
-            そこで発見したのは、一つのUSB。中を開こうとすると、
-            <strong>暗証番号</strong>でロックがかけられているようだ。
+            そこで発見したのは、一冊の黒いファイル。中には、
+            <strong>犯人の候補とその動機が詳細にまとめられたデータ</strong>が収められていた。
           </p>
           <p>
-            あなたはロックを解除するため西早稲田キャンパス内を探索しなければならない
+            これは、事件の真相に迫る決定的な一歩となるかもしれない――。
           </p>
 
           <button
