@@ -74,10 +74,10 @@ export default function Puzzle2() {
           id: 'suspects',
           title: '容疑者',
           items: [
-            { name: '安達茜', desc: '総務局/', icon: <User className="inline mr-2 text-blue-500" size={16} /> },
-            { name: '平田浩介', desc: '広報局/影の実力者', icon: <Glasses className="inline mr-2 text-red-500" size={16} /> },
-            { name: '中町太郎', desc: '企画局/いつも明るく元気なお兄さん', icon: <Zap className="inline mr-2 text-orange-500" size={16} /> },
-            { name: '関涼太', desc: '情報局/昼夜逆転しているとの噂', icon: <Laptop className="inline mr-2 text-purple-500" size={16} /> }
+            { name: '安達茜', desc: '総務局/容疑者の中では紅一点。もともと男性だったとの噂', icon: <User className="inline mr-2 text-blue-500" size={16} /> },
+            { name: '平田浩介', desc: '広報局/決して自分の能力を表にひけらかさない。能ある鷹は爪を隠す', icon: <Glasses className="inline mr-2 text-red-500" size={16} /> },
+            { name: '中町太郎', desc: '企画局/いつも明るく元気なお兄さん。優しさは時に...？', icon: <Zap className="inline mr-2 text-orange-500" size={16} /> },
+            { name: '関涼太', desc: '情報局/面白いことが大好きなゲーマー。昼夜逆転しているらしい', icon: <Laptop className="inline mr-2 text-purple-500" size={16} /> }
           ]
         }, {
           id: 'weapons',
@@ -92,19 +92,19 @@ export default function Puzzle2() {
           id: 'locations',
           title: '現場',
           items: [
-            { name: '倉庫', desc: 'みんなの倉庫', icon: <Warehouse className="inline mr-2 text-teal-600" size={16} /> },
-            { name: '制作部屋', desc: '誰でも開けられるわけではない', icon: <DoorClosedLocked className="inline mr-2 text-teal-600" size={16} /> },
+            { name: '連絡部屋', desc: 'あまり人が出入りしない', icon: <Brain className="inline mr-2 text-teal-600" size={16} /> },
             { name: 'カフェテリア', desc: 'とても広くて見通しがいい', icon: <ChefHat className="inline mr-2 text-teal-600" size={16} /> },
-            { name: '連絡部屋', desc: 'あまり人が出入りしない', icon: <Brain className="inline mr-2 text-teal-600" size={16} /> }
+            { name: '倉庫', desc: 'みんなの倉庫', icon: <Warehouse className="inline mr-2 text-teal-600" size={16} /> },
+            { name: '制作部屋', desc: '誰でも開けられるわけではない', icon: <DoorClosedLocked className="inline mr-2 text-teal-600" size={16} /> }
           ]
         }, {
           id: 'motives',
           title: '動機',
           items: [
-            { name: '口封じ', desc: '犯人にとって不都合な秘密を握っていた。', icon: <ShieldUser className="inline mr-2 text-pink-600" size={16} /> },
-            { name: '野心', desc: '副代表の座を奪うには殺すしかない', icon: <Flame className="inline mr-2 text-pink-600" size={16} /> },
+            { name: '口封じ', desc: '殺された副代表は財務出身だった。金銭のトラブルでも合ったのだろうか？', icon: <ShieldUser className="inline mr-2 text-pink-600" size={16} /> },
             { name: '力の誇示', desc: '力こそpower, power is 力', icon: <BicepsFlexed className="inline mr-2 text-pink-600" size={16} /> },
-            { name: '興味本位', desc: '実施にやってみないと分からない', icon: <Pointer className="inline mr-2 text-pink-600" size={16} /> }
+            { name: '興味本位', desc: '誰だって想像することはできるが、実施にやってみないと分からない', icon: <Pointer className="inline mr-2 text-pink-600" size={16} /> },
+            { name: '野心', desc: '被害者は副代表だった。副代表の座を奪うには殺すしかない', icon: <Flame className="inline mr-2 text-pink-600" size={16} /> }
           ]
         }].map(({ id, title, items }) => (
           <div key={id} className="border rounded">

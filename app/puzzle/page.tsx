@@ -23,9 +23,10 @@ export default function PuzzlePage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
-      <h2 className="text-2xl font-bold mb-6 text-center">謎解き 第1問</h2>
+      <p className="text-2xl font-bold mb-6 text-center">第１問 集めた文字を組み替えて言葉にしろ</p>
 
       {!isCorrect && (
+        
         <div className="w-full max-w-sm mb-6">
           <input
             type="text"

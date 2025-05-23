@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { Fragment } from 'react';
 
 const text = `昨晩、理工展準備中に
-サークル員の一人が何者かに
+副代表が何者かに
 【殺】
-された
+された。
 
 警察の捜査は難航し
 犯人も動機も不明。
@@ -23,7 +23,7 @@ const text = `昨晩、理工展準備中に
 この謎を解いたものだけが
 真実への手がかりを掴む
 
-参加者（プレイヤー）は、この謎に挑み、
+参加者（あなたたち）は、この謎に挑み、
 事件の真相を突き止めなければならない。`;
 
 export default function Home() {
