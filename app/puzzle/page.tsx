@@ -51,7 +51,7 @@ export default function PuzzlePage() {
           </p>
           <p>
             そこで発見したのは、一つのUSB。中を開こうとすると、
-            <strong>暗証番号</strong>でロックがかけられているようだ。
+            <strong>何かの言葉？</strong>でロックがかけられているようだ。
           </p>
           <p>
             あなたはロックを解除するため西早稲田キャンパス内を探索しなければならない
